@@ -1,0 +1,11 @@
+{
+  "name": "eeylops_owl_emporium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style/sass/main.scss:style/css/style.css"
+  },
+  "author": "Tam-star",
+  "license": "ISC"
+}

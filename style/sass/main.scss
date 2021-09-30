@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'HarryPotter';
+    src: url('harry-p/HARRYP.ttf');
+}
+
+body{
+    background-color: rgb(29, 27, 25);
+    color:white;
+    height:100%;
+}
+
+
+header{
+    background-color: rgb(177, 118, 66);
+    min-height: 85px;
+    max-height:auto;
+    width: 70%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border: 8px outset black;
+    & h1{
+        color:rgb(87, 37, 7);
+        text-align: center;
+        font-size:50px;
+        font-family: 'HarryPotter', 'Times New Roman', Times, serif;
+    }
+}
+
+.menu{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom:20px;
+   // background-color: rgb(55, 0, 255);
+    &__item{
+        list-style-type: none;
+        font-size: 25px;
+        padding-right: 30px;
+        padding-left:30px;
+        & a{
+        text-decoration: none;
+        color:white;
+        }
+    }
+}
+
+.border_right{
+    border-right: 2px solid white;
+}
+
+.grid_container{
+    display:grid;
+    justify-items: center;
+    width:90%;
+    margin:auto;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap:50px;
+    &__item{
+        background-color: white;
+        color:black;
+        text-align: center;
+        width: 300px;
+        height: 320px;
+        padding:15px;
+        box-shadow: 10px 5px 5px black;
+        transform: scale(1);
+        transition: transform 200ms;
+        &:hover{
+            transform: scale(1.10);
+        }
+        & img{
+            max-width: 280px;
+        }
+        
+    }
+}
+
+.pet_description{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    &__species{
+        font-weight: bold;
+    }
+}
+
+footer{
+    margin-top: 80px;
+    height: 150px;
+    text-align: center;
+    padding-top:30px;
+    background-color: rgb(177, 118, 66);
+}
+
+.location_title{
+    font-weight: bold;
+}
+
+
+
