@@ -1,6 +1,7 @@
 const boutonPlus = document.getElementsByClassName("pet_ajout__plus");
 const boutonMoins = document.getElementsByClassName("pet_ajout__moins");
 const quantite = document.getElementsByClassName("pet_ajout__quantite");
+const addButton = document.getElementsByClassName("pet_ajout__add");
 
 const owlsPageLink = document.getElementById("owls");
 const catsPageLink = document.getElementById("cats");
@@ -11,6 +12,7 @@ const petName = document.getElementsByClassName("pet_description__species");
 const petPrice = document.getElementsByClassName("pet_description__price");
 const petImage = document.getElementsByClassName("grid_container__item__image__img");
 
+const panierDiv = document.getElementById("panier");
 
 //OWLS
 const arrayOwlsNames = ["BARN OWL", "BROWN OWL", "SCREECH OWL", "TAWNY OWL", "SNOWY OWL"];
@@ -41,6 +43,7 @@ const arrayToadsImagesPaths = ["https://static.wikia.nocookie.net/pottermore/ima
 
 
 let actualPage = "owls";
+let cart = new Array();
 
 for(let i=0;i<5;i++){
     petName[i].textContent=arrayOwlsNames[i];
@@ -91,6 +94,10 @@ for(let i=0;i<5;i++){
     boutonMoins[i].addEventListener("click", ()=> substract(i));
 }
 
+for(let i=0;i<5;i++){
+    addButton[i].addEventListener("click", ()=> addToCart(i));
+}
+
 function add(item){
     let intQuantite = parseInt(quantite[item].textContent);
     quantite[item].textContent=intQuantite+1;
@@ -100,4 +107,33 @@ function substract(item){
     let intQuantite = parseInt(quantite[item].textContent);
     if(intQuantite>0)
         quantite[item].textContent=intQuantite-1;
+}
+
+function addToCart(item){
+    let itemToAdd ="";
+    switch(actualPage){
+        case "owls":
+                itemToAdd=arrayOwlsNames[item];
+            break;
+        case "cats":
+                itemToAdd=arrayCatsNames[item];
+            break;
+        case "toads":
+                itemToAdd=arrayToadsNames[item];
+            break;
+    }
+    for(let i=0;i<parseInt(quantite[item].textContent);i++)
+        cart.push(itemToAdd);
+    if(cart.length==0)
+        panierDiv.textContent="Your cart is empty";
+    else{
+        panierDiv.textContent="";
+        for(let i=0;i<cart.length;i++){
+            let newElt = document.createElement("p");
+            newElt.textContent=cart[i];
+            panierDiv.appendChild(newElt);
+           
+        }
+    }
+    console.log(cart);
 }
