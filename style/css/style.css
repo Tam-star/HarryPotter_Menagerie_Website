@@ -6,6 +6,8 @@ body {
   background-color: #1d1b19;
   color: white;
   height: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 header {
@@ -48,6 +50,20 @@ header h1 {
   border-right: 2px solid white;
 }
 
+#panier {
+  position: fixed;
+  z-index: 2;
+  bottom: 190px;
+  right: 0;
+  border: 5px solid black;
+  min-width: 200px;
+  min-height: 50px;
+  width: auto;
+  height: auto;
+  background-color: #b17642;
+  text-align: center;
+}
+
 .grid_container {
   display: grid;
   justify-items: center;
@@ -58,30 +74,56 @@ header h1 {
   row-gap: 50px;
 }
 .grid_container__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background-color: white;
   color: black;
   text-align: center;
   width: 300px;
-  height: 320px;
-  padding: 15px;
+  height: 310px;
+  padding: 15px 15px 0px 15px;
   box-shadow: 10px 5px 5px black;
   transform: scale(1);
   transition: transform 200ms;
 }
 .grid_container__item:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
-.grid_container__item img {
+.grid_container__item__image img {
   max-width: 280px;
+  height: 200px;
 }
 
 .pet_description {
-  margin-top: 20px;
+  padding: 5px 15px 0 15px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .pet_description__species {
   font-weight: bold;
+}
+
+.pet_ajout {
+  background-color: #572507;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 15px 0px 15px;
+}
+.pet_ajout__small_container {
+  width: 90px;
+  margin: auto;
+  border-radius: 10%/50%;
+  background-color: white;
+}
+.pet_ajout__small_container__items {
+  margin: 0 7px 0 7px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 footer {
@@ -94,6 +136,25 @@ footer {
 
 .location_title {
   font-weight: bold;
+}
+
+@media screen and (max-width: 1180px) {
+  .grid_container {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .grid_container {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
