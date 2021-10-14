@@ -17,29 +17,29 @@ const panierDiv = document.getElementById("panier");
 //OWLS
 const arrayOwlsNames = ["BARN OWL", "BROWN OWL", "SCREECH OWL", "TAWNY OWL", "SNOWY OWL"];
 const arrayOwlsPrices = ["10 Galleon", "10 Galleons", "15 Galleons", "10 Galleons", "30 Galleons"];
-const arrayOwlsImagesPaths = ["https://static.wikia.nocookie.net/pottermore/images/c/cf/Barn-owl-lrg.png/revision/latest?cb=20120602174448s", 
-"https://static.wikia.nocookie.net/pottermore/images/3/3b/Brown-owl-lrg.png/revision/latest?cb=20120714045119", 
-"https://static.wikia.nocookie.net/pottermore/images/c/c7/Screech-owl-lrg.png/revision/latest?cb=20120602175523", 
-"https://static.wikia.nocookie.net/pottermore/images/7/79/Tawny-owl-lrg.png/revision/latest?cb=20120602175601", 
+const arrayOwlsImagesPaths = ["images/owls/barn-owl.png", 
+"images/owls/brown-owl.png", 
+"images/owls/screech-owl.png", 
+"images/owls/tawny-owl.png", 
 "images/owls/snowy-owl.jpg"];
 
 //CATS
 const arrayCatsNames = ["BLACK CAT", "GINGER CAT", "SIAMESE CAT", "TABBY CAT", "WHITE CAT"];
 const arrayCatsPrices = ["9 Galleons", "9 Galleons", "11 Galleons", "9 Galleons", "9 Galleons"];
-const arrayCatsImagesPaths = ["https://static.wikia.nocookie.net/pottermore/images/9/9a/Black-cat-lrg.png/revision/latest?cb=20120602173854", 
-"https://static.wikia.nocookie.net/pottermore/images/9/9d/Ginger-cat-lrg.png/revision/latest?cb=20120602174049", 
-"https://static.wikia.nocookie.net/pottermore/images/3/38/Siamese-cat-lrg.png/revision/latest?cb=20120602174132", 
-"https://static.wikia.nocookie.net/pottermore/images/0/00/Tabby-cat-lrg.png/revision/latest?cb=20120602174209", 
-"https://static.wikia.nocookie.net/pottermore/images/5/54/White-cat-lrg.png/revision/latest?cb=20120602174307"];
+const arrayCatsImagesPaths = ["images/cats/black-cat.png", 
+"images/cats/ginger-cat.png", 
+"images/cats/siamese-cat.png", 
+"images/cats/tabby-cat.png", 
+"images/cats/white-cat.png"];
 
 //TOADS
 const arrayToadsNames = ["COMMON TOAD", "CRESTED TOAD", "HARLEQUIN TOAD", "NATTERJACK TOAD", "WESTERN GREEN TOAD"];
 const arrayToadsPrices = ["5 Galleons", "9 Galleons", "9 Galleons", "5 Galleons", "9 Galleons"];
-const arrayToadsImagesPaths = ["https://static.wikia.nocookie.net/pottermore/images/6/69/Common-toad-lrg.png/revision/latest?cb=20120714045724", 
-"https://static.wikia.nocookie.net/pottermore/images/f/f0/Crested-toad-lrg.png/revision/latest?cb=20120714045918", 
-"https://static.wikia.nocookie.net/pottermore/images/6/6b/Harlequin-toad-lrg.png/revision/latest?cb=20120714222017",
-"https://static.wikia.nocookie.net/pottermore/images/3/3a/Natterjack-toad-lrg.png/revision/latest?cb=20120715023520", 
-"https://static.wikia.nocookie.net/pottermore/images/8/8b/Western-green-toad-lrg.png/revision/latest?cb=20120715051431"];
+const arrayToadsImagesPaths = ["images/toads/common-toad.png", 
+"images/toads/crested-toad.png", 
+"images/toads/harlequin-toad.png",
+"images/toads/natterjack-toad.png", 
+"images/toads/western-green-toad.png"];
 
 
 let actualPage = "owls";
