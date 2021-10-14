@@ -44,6 +44,11 @@ header h1 {
 .menu__item a {
   text-decoration: none;
   color: white;
+  transition: border-bottom 250ms;
+}
+.menu__item a:hover {
+  cursor: pointer;
+  border-bottom: 2px solid white;
 }
 
 .border_right {

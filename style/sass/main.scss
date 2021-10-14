@@ -44,7 +44,14 @@ header{
         & a{
         text-decoration: none;
         color:white;
+        transition : border-bottom 250ms;
+            &:hover{
+                cursor:pointer;
+               border-bottom: 2px solid white;
+            }
         }
+        
+        
     }
 }
 
