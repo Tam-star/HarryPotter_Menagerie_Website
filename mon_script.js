@@ -1,3 +1,7 @@
+const boutonPlus = document.getElementsByClassName("pet_ajout__plus");
+const boutonMoins = document.getElementsByClassName("pet_ajout__moins");
+const quantite = document.getElementsByClassName("pet_ajout__quantite");
+
 const owlsPageLink = document.getElementById("owls");
 const catsPageLink = document.getElementById("cats");
 const toadsPageLink = document.getElementById("toads");
@@ -36,7 +40,7 @@ const arrayToadsImagesPaths = ["https://static.wikia.nocookie.net/pottermore/ima
 "https://static.wikia.nocookie.net/pottermore/images/8/8b/Western-green-toad-lrg.png/revision/latest?cb=20120715051431"];
 
 
-
+let actualPage = "owls";
 
 for(let i=0;i<5;i++){
     petName[i].textContent=arrayOwlsNames[i];
@@ -51,7 +55,9 @@ owlsPageLink.addEventListener("click", function(){
         petName[i].textContent=arrayOwlsNames[i];
         petPrice[i].textContent=arrayOwlsPrices[i];
         petImage[i].src = arrayOwlsImagesPaths[i];
+        quantite[i].textContent="0";
     }
+    actualPage = "owls";
   });
 
 catsPageLink.addEventListener("click", function(){ 
@@ -60,7 +66,9 @@ catsPageLink.addEventListener("click", function(){
         petName[i].textContent=arrayCatsNames[i];
         petPrice[i].textContent=arrayCatsPrices[i];
         petImage[i].src = arrayCatsImagesPaths[i];
+        quantite[i].textContent="0";
     } 
+    actualPage = "cats";
   });
 
 toadsPageLink.addEventListener("click", function(){ 
@@ -69,6 +77,27 @@ toadsPageLink.addEventListener("click", function(){
         petName[i].textContent=arrayToadsNames[i];
         petPrice[i].textContent=arrayToadsPrices[i];
         petImage[i].src = arrayToadsImagesPaths[i];
+        quantite[i].textContent="0";
     } 
+    actualPage = "toads";
   });
   
+
+for(let i=0;i<5;i++){
+    boutonPlus[i].addEventListener("click", ()=> add(i));
+}
+
+for(let i=0;i<5;i++){
+    boutonMoins[i].addEventListener("click", ()=> substract(i));
+}
+
+function add(item){
+    let intQuantite = parseInt(quantite[item].textContent);
+    quantite[item].textContent=intQuantite+1;
+}
+
+function substract(item){
+    let intQuantite = parseInt(quantite[item].textContent);
+    if(intQuantite>0)
+        quantite[item].textContent=intQuantite-1;
+}
