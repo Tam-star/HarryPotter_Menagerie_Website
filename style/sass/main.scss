@@ -30,6 +30,10 @@ header{
     }
 }
 
+
+
+//PAGE INDEX.HTML
+
 .menu{
     display:flex;
     justify-content: center;
@@ -61,17 +65,27 @@ header{
 
 
 #panier{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     z-index:2;
     bottom: 190px;
     right: 0;
     border: 5px solid black;
-    //min-width : 200px;
     min-height : 50px;
     width : 200px;
     height : auto;
     background-color: rgb(177, 118, 66);
     text-align: center;
+    &__boutons{
+        width : 100%;
+        display :flex;
+        justify-content: space-around;
+        visibility: hidden;
+        margin : 5px 0 5px 0;
+
+    }
 }
 
 .grid_container{
@@ -163,6 +177,24 @@ footer{
 .location_title{
     font-weight: bold;
 }
+
+//PAGE ORDER.HTML
+#panier_final{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & h3{
+        font-size: 40px;
+    }
+    &__liste{
+        width:400px;
+        background-color: rgb(177, 118, 66);
+        border: 5px solid rgb(87, 37, 7);
+        font-size: 20px;
+    }
+}
+
 
 @media screen and (max-width: 1180px) {
 

@@ -56,6 +56,9 @@ header h1 {
 }
 
 #panier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   z-index: 2;
   bottom: 190px;
@@ -66,6 +69,13 @@ header h1 {
   height: auto;
   background-color: #b17642;
   text-align: center;
+}
+#panier__boutons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  visibility: hidden;
+  margin: 5px 0 5px 0;
 }
 
 .grid_container {
@@ -151,6 +161,22 @@ footer {
 
 .location_title {
   font-weight: bold;
+}
+
+#panier_final {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#panier_final h3 {
+  font-size: 40px;
+}
+#panier_final__liste {
+  width: 400px;
+  background-color: #b17642;
+  border: 5px solid #572507;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1180px) {
