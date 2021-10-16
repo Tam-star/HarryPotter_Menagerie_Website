@@ -46,7 +46,20 @@ const arrayToadsImagesPaths = ["images/toads/common-toad.png",
 
 let actualPage = "owls";
 let cart = new Array();
-
+if(sessionStorage.getItem("cart")){
+    cart = JSON.parse(sessionStorage.getItem("cart"));
+    panierDiv.textContent="";
+    for(let i=0;i<cart.length;i++){
+        let newElt = document.createElement("p");
+        newElt.textContent=cart[i];
+        panierDiv.appendChild(newElt);
+        panierButtons.style.visibility="visible";
+       
+    }
+    console.log("cart enregistré")
+}
+else    
+    console.log("pas de cart enregistré")
 
     for(let i=0;i<5;i++){
         petName[i].textContent=arrayOwlsNames[i];
@@ -144,20 +157,23 @@ function addToCart(item){
             newElt.textContent=cart[i];
             panierDiv.appendChild(newElt);
             panierButtons.style.visibility="visible";
-           
         }
+        sessionStorage.setItem("cart", JSON.stringify(cart));
     }
     console.log(cart);
 }
 
 function clearCart(){
-    for(let i=0;i<cart.length;i++);
-        cart.pop();
+    for(let i=cart.length-1;i>=0;i--){
+        cart.shift();
+        sessionStorage.clear();
+    }
+    console.log(cart);   
     panierDiv.textContent="Your cart is empty";
+    panierButtons.style.visibility="hidden";
 }
 
 //SESSION STORAGE FUNCTION
 function goPay(){
-  sessionStorage.setItem("cart", JSON.stringify(cart));
   location.href = "order.html";
 }
