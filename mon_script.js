@@ -17,8 +17,6 @@ const panierButtons = document.getElementById("panier__boutons");
 const panierButtonPay = document.getElementById("panier__boutons__pay");
 const panierButtonClear = document.getElementById("panier__boutons__clear");
 
-const panierFinalListe = document.getElementById("panier_final__liste");
-
 //OWLS
 const arrayOwlsNames = ["BARN OWL", "BROWN OWL", "SCREECH OWL", "TAWNY OWL", "SNOWY OWL"];
 const arrayOwlsPrices = ["10 Galleon", "10 Galleons", "15 Galleons", "10 Galleons", "30 Galleons"];
@@ -49,10 +47,6 @@ const arrayToadsImagesPaths = ["images/toads/common-toad.png",
 let actualPage = "owls";
 let cart = new Array();
 
-
-//INDEX.HTML PAGE
-if ( document.URL.includes("index.html") ) {
-   
 
     for(let i=0;i<5;i++){
         petName[i].textContent=arrayOwlsNames[i];
@@ -110,22 +104,6 @@ if ( document.URL.includes("index.html") ) {
     panierButtonClear.addEventListener("click", ()=> clearCart())
     panierButtonPay.addEventListener("click",() => goPay())
 
-}
-
-
-//ORDER HTML PAGE
-if ( document.URL.includes("order.html") ) {
-
-    cart = getCart();
-    console.log(cart);
-
-    for(let i=0;i<cart.length;i++){
-        let newElt = document.createElement("li");
-        newElt.textContent=cart[i];
-        panierFinalListe.appendChild(newElt);
-    }
-}
-
 
 
 //FUNCTIONS 
@@ -178,14 +156,8 @@ function clearCart(){
     panierDiv.textContent="Your cart is empty";
 }
 
-//SESSION STORAGE FUNCTIONS
+//SESSION STORAGE FUNCTION
 function goPay(){
   sessionStorage.setItem("cart", JSON.stringify(cart));
   location.href = "order.html";
-}
-
-function getCart () {
-    let cart = JSON.parse(sessionStorage.getItem("cart"));
-    console.log(cart); 
-    return cart;
 }
