@@ -1,5 +1,3 @@
-It's a work in progress...
-
 If you want to have a look : https://tam-star.github.io/HarryPotter_Menagerie_Website/
 
 # HarryPotter_Menagerie_Website
