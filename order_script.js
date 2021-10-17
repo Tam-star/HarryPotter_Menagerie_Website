@@ -7,7 +7,7 @@ const goingBack = document.getElementById("going_back");
 
     for(let i=0;i<cart.length;i++){
         let newElt = document.createElement("li");
-        newElt.textContent=cart[i];
+        newElt.textContent=cart[i].nb+" "+cart[i].name;
         panierFinalListe.appendChild(newElt);
     }
 

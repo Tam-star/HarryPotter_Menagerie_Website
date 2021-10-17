@@ -51,7 +51,7 @@ if(sessionStorage.getItem("cart")){
     panierDiv.textContent="";
     for(let i=0;i<cart.length;i++){
         let newElt = document.createElement("p");
-        newElt.textContent=cart[i];
+        newElt.textContent=cart[i].nb+" "+cart[i].name;;
         panierDiv.appendChild(newElt);
         panierButtons.style.visibility="visible";
        
@@ -145,8 +145,13 @@ function addToCart(item){
                 itemToAdd=arrayToadsNames[item];
             break;
     }
-    for(let i=0;i<parseInt(quantite[item].textContent);i++)
-        cart.push(itemToAdd);
+   // for(let i=0;i<parseInt(quantite[item].textContent);i++)
+        //cart.push(itemToAdd);
+    cart.push({
+            "nb": parseInt(quantite[item].textContent),
+            "name": itemToAdd
+        })
+    
     if(cart.length==0){
         panierDiv.textContent="Your cart is empty";
         panierButtons.style.visibility="hidden";
@@ -154,7 +159,7 @@ function addToCart(item){
         panierDiv.textContent="";
         for(let i=0;i<cart.length;i++){
             let newElt = document.createElement("p");
-            newElt.textContent=cart[i];
+            newElt.textContent=cart[i].nb+" "+cart[i].name;
             panierDiv.appendChild(newElt);
             panierButtons.style.visibility="visible";
         }
